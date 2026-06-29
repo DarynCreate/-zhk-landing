@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <body>
+
+
+
+<!-- CALLBACK WIDGET -->
+<div class="callback-btn" onclick="toggleCallback()">Заказать звонок</div>
+<div class="callback-panel" id="callbackPanel">
+  <div class="callback-header">
+    <p class="section-eyebrow" style="margin:0">Обратный звонок</p>
+    <button class="callback-close" onclick="toggleCallback()">✕</button>
+  </div>
+  <p style="font-size:14px; color:#777; margin-bottom:24px; font-weight:300;">Оставьте контакты — перезвоним в течение 30 минут</p>
+  <form onsubmit="handleCallback(event)">
+    <input class="form-input" type="text" placeholder="Ваше имя" required />
+    <input class="form-input" type="tel" placeholder="+7 (___) ___-__-__" required style="margin-top:12px;" />
+    <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%; margin-top:16px;">Перезвоните мне</button>
+    <p class="form-note" style="margin-top:12px;">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+  </form>
+</div>
  
 <!-- NAV -->
 <nav>
@@ -139,7 +157,7 @@
  
   <div id="apt-1" class="apt-panel active">
     <div class="apt-plan">
-      <div class="apt-plan-placeholder">Планировка<br>1-комн. · 51,98 м²</div>
+       <img src="plan1.jpg" alt="Планировка 1-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
     </div>
     <div class="apt-info">
       <div class="apt-area">51,98 <span>м²</span></div>
@@ -157,79 +175,102 @@
       </div>
     </div>
   </div>
+
+  <!-- 2ух комнатные планировки -->
  
   <div id="apt-2" class="apt-panel">
-    <div class="apt-plan">
-      <div class="apt-plan-placeholder">Планировка<br>2-комн. · от 78,38 м²</div>
-    </div>
-    <div class="apt-info">
-      <div class="apt-area">78–89 <span>м²</span></div>
-      <p style="color:#999; font-size:14px; margin-top:8px;">2-комнатная квартира</p>
-      <div class="apt-details">
-        <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
-        <div class="apt-detail-row"><span>Площадь</span><span>78,38 — 89,77 м²</span></div>
-        <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
-        <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
-        <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
-      </div>
-      <div class="apt-cta">
-        <a href="#contact" class="btn-primary">Узнать точную цену</a>
-      </div>
+  <div class="apt-plan">
+    <img id="plan2-img" src="plan2a.png" alt="Планировка 2-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan2-img', ['plan2a.png','plan2b.png'], -1)">←</button>
+      <span id="plan2-counter">1 / 2</span>
+      <button onclick="switchPlan('plan2-img', ['plan2a.png','plan2b.png'], 1)">→</button>
     </div>
   </div>
+  <div class="apt-info">
+    <div class="apt-area">78–89 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">2-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
+      <div class="apt-detail-row"><span>Площадь</span><span>78,38 — 89,77 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
  
+
+<!-- 3ех комнатные планировки -->
+
+
   <div id="apt-3" class="apt-panel">
-    <div class="apt-plan">
-      <div class="apt-plan-placeholder">Планировка<br>3-комн. · от 119,53 м²</div>
-    </div>
-    <div class="apt-info">
-      <div class="apt-area">119–120 <span>м²</span></div>
-      <p style="color:#999; font-size:14px; margin-top:8px;">3-комнатная квартира</p>
-      <div class="apt-details">
-        <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
-        <div class="apt-detail-row"><span>Площадь</span><span>119,53 — 119,81 м²</span></div>
-        <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
-        <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
-        <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
-      </div>
-      <div class="apt-cta">
-        <a href="#contact" class="btn-primary">Узнать точную цену</a>
-      </div>
+  <div class="apt-plan">
+    <img id="plan3-img" src="plan3a.png" alt="Планировка 3-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan3-img', ['plan3a.png','plan3b.png'], -1)">←</button>
+      <span id="plan3-counter">1 / 2</span>
+      <button onclick="switchPlan('plan3-img', ['plan3a.png','plan3b.png'], 1)">→</button>
     </div>
   </div>
+  <div class="apt-info">
+    <div class="apt-area">119–120 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">3-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
+      <div class="apt-detail-row"><span>Площадь</span><span>119,53 — 119,81 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- 4х комнатные планировки -->
  
   <div id="apt-4" class="apt-panel">
-    <div class="apt-plan">
-      <div class="apt-plan-placeholder">Планировка<br>4-комн. · от 114 м²</div>
-    </div>
-    <div class="apt-info">
-      <div class="apt-area">114–117 <span>м²</span></div>
-      <p style="color:#999; font-size:14px; margin-top:8px;">4-комнатная квартира</p>
-      <div class="apt-details">
-        <div class="apt-detail-row"><span>Площадь</span><span>114,04 — 117,33 м²</span></div>
-        <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
-        <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
-        <div class="apt-detail-row"><span>Стоимость</span><span>от 190 млн ₸</span></div>
-      </div>
-      <div class="apt-cta">
-        <a href="#contact" class="btn-primary">Узнать точную цену</a>
-      </div>
+  <div class="apt-plan">
+    <img id="plan4-img" src="plan4a.png" alt="Планировка 4-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan4-img', ['plan4a.png','plan4b.png'], -1)">←</button>
+      <span id="plan4-counter">1 / 2</span>
+      <button onclick="switchPlan('plan4-img', ['plan4a.png','plan4b.png'], 1)">→</button>
     </div>
   </div>
-</section>
+  <div class="apt-info">
+    <div class="apt-area">114–117 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">4-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Площадь</span><span>114,04 — 117,33 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>от 190 млн ₸</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
  
 <!-- GALLERY -->
 <div id="gallery">
   <div class="gallery-item">
-    <img src="https://homsters.kz/img/photo/13211042/2560x1920.jpg" alt="Фасад ЖК Kosmonavtova" />
+    <img src="fasad.png" alt="Фасад ЖК Kosmonavtova" />
     <div class="gallery-label">Фасад</div>
   </div>
   <div class="gallery-item">
-    <img src="https://homsters.kz/img/photo/13211043/2560x1920.jpg" alt="Двор" />
+    <img src="dvor.png" alt="Двор" />
     <div class="gallery-label">Двор</div>
   </div>
   <div class="gallery-item">
-    <img src="https://homsters.kz/img/photo/13211044/2560x1920.jpg" alt="Территория" />
+    <img src="territorya.png" alt="Территория" />
     <div class="gallery-label">Территория</div>
   </div>
 </div>
@@ -242,9 +283,9 @@
     <ul class="location-list">
       <li><span>Адрес</span><span>ул. Пирогова, 15</span></li>
       <li><span>Район</span><span>Бостандыкский</span></li>
-      <li><span>Ботанический сад</span><span>пешком</span></li>
-      <li><span>КазНУ им. аль-Фараби</span><span>пешком</span></li>
-      <li><span>Школы и детсады</span><span>в пешей доступности</span></li>
+      <li><span>Ботанический сад</span><span>15-20 минут</span></li>
+      <li><span>КазНУ им. аль-Фараби</span><span>15 минут</span></li>
+      <li><span>Школы и детсады</span><span>5-15 минут</span></li>
       <li><span>До центра Алматы</span><span>10–15 мин</span></li>
     </ul>
   </div>
@@ -293,7 +334,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Kosmonavtova</div>
-  <div class="footer-meta">© 2025 ЖК Kosmonavtova · Застройщик: Поток-8 · Алматы, ул. Пирогова, 15</div>
+  <div class="footer-meta">© 2026 ЖК Kosmonavtova · Застройщик: Поток-8 · Alem Sauda Ltd · Алматы, ул. Пирогова, 15</div>
 </footer>
 
 <script src="script.js"></script>
