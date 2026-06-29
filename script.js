@@ -22,3 +22,27 @@ function switchTab(btn, panelId) {
       nav.style.background = 'rgba(26,28,32,0.92)';
     }
   });
+
+  function toggleCallback() {
+  const panel = document.getElementById('callbackPanel');
+  const btn = document.querySelector('.callback-btn');
+  panel.classList.toggle('open');
+  btn.classList.toggle('hidden');
+}
+
+function handleCallback(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = 'Заявка отправлена';
+  btn.style.background = '#4a7c59';
+  btn.disabled = true;
+}
+
+const planIndexes = { 'plan2-img': 0, 'plan3-img': 0, 'plan4-img': 0 };
+const planCounters = { 'plan2-img': 'plan2-counter', 'plan3-img': 'plan3-counter', 'plan4-img': 'plan4-counter' };
+
+function switchPlan(imgId, plans, dir) {
+  planIndexes[imgId] = (planIndexes[imgId] + dir + plans.length) % plans.length;
+  document.getElementById(imgId).src = plans[planIndexes[imgId]];
+  document.getElementById(planCounters[imgId]).textContent = (planIndexes[imgId] + 1) + ' / ' + plans.length;
+}
