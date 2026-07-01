@@ -46,3 +46,15 @@ function switchPlan(imgId, plans, dir) {
   document.getElementById(imgId).src = plans[planIndexes[imgId]];
   document.getElementById(planCounters[imgId]).textContent = (planIndexes[imgId] + 1) + ' / ' + plans.length;
 }
+
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+  document.querySelector('.burger').classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+    document.querySelector('.burger').classList.remove('open');
+  });
+});
