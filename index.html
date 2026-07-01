@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЖК Kosmonavtova</title>
+  <link rel="icon" type="image/png" href="logo3.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- WHATSAPP -->
+<a href="https://wa.me/77770088121" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.057 23.57a.75.75 0 00.914.914l5.716-1.475A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.953-1.355l-.355-.211-3.688.951.972-3.554-.232-.366A9.726 9.726 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" fill="white"/>
+  </svg>
+</a>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Наверх">↑</button>
+  
+  <body>
+
+<!-- CALLBACK WIDGET
+<div class="callback-btn" onclick="toggleCallback()">Заказать звонок</div>
+<div class="callback-panel" id="callbackPanel">
+  <div class="callback-header">
+    <p class="section-eyebrow" style="margin:0">Обратный звонок</p>
+    <button class="callback-close" onclick="toggleCallback()">✕</button>
+  </div>
+  <p style="font-size:14px; color:#777; margin-bottom:24px; font-weight:300;">Оставьте контакты — перезвоним в течение 30 минут</p>
+  <form onsubmit="handleCallback(event)">
+    <input class="form-input" type="text" placeholder="Ваше имя" required />
+    <input class="form-input" type="tel" placeholder="+7 (___) ___-__-__" required style="margin-top:12px;" />
+    <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%; margin-top:16px;">Перезвоните мне</button>
+    <p class="form-note" style="margin-top:12px;">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+  </form>
+</div> -->
+ 
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Kosmonavtova</a>
+  <button class="burger" onclick="toggleMenu()" aria-label="Меню">
+  <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about" >О проекте</a></li>
+    <li><a href="#apartments">Квартиры</a></li>
+    <li><a href="#location">Расположение</a></li>
+    <li><a href="#contact">Контакты</a></li>
+    <li class="nav-phone">
+      <span>Позвоните нам</span>
+      <a href="tel:+77770088121">+7 (777) 008 8121</a>
+    </li>
+  </ul>
+  <a  href="#contact" class="nav-cta">Оставить заявку</a>
+</nav>
+ 
+<!-- HERO -->
+<section id="hero">
+  <div  class="hero-bg "></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Бизнес-класс · Алматы · Бостандыкский район</p>
+    <h1 class="hero-title">Жить<br>на своём <em>уровне</em></h1>
+    <p class="hero-sub">9-этажный монолит на ул. Пирогова, 15. Потолки 3 м, 88 квартир, закрытый двор. Сдача — IV кв. 2025.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Получить консультацию</a>
+      <a href="#apartments" class="btn-ghost">Смотреть планировки →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">88</div>
+      <div class="stat-label">квартир</div>
+    </div>
+    <div>
+      <div class="stat-num">3 м</div>
+      <div class="stat-label">высота потолков</div>
+    </div>
+    <div>
+      <div class="stat-num">от 50 млн</div>
+      <div class="stat-label">стоимость</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text fade-up">
+    <p class="section-eyebrow">О проекте</p>
+    <h2 class="section-title">Дом, который<br><em>не нужно</em> оправдывать</h2>
+    <p>ЖК Kosmonavtova — монолитный дом бизнес-класса в Бостандыкском районе. Тихое место в пешей доступности от Ботанического сада и КазНУ, вдали от шумных магистралей.</p>
+    <p>Ламинатный фасад, подземный паркинг, центральное отопление, пассажирский и грузовой лифты. Черновая отделка — делайте интерьер под себя, не переплачивая за чужой вкус.</p>
+  </div>
+  <div class="about-specs fade-up fade-up-delay-2">
+    <div class="spec-item">
+      <div class="spec-value">9</div>
+      <div class="spec-key">этажей</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-value">3 м</div>
+      <div class="spec-key">потолки</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-value">88</div>
+      <div class="spec-key">квартир</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-value">Монолит</div>
+      <div class="spec-key">конструкция</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-value">45–152</div>
+      <div class="spec-key">площадь, м²</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-value">Бизнес</div>
+      <div class="spec-key">класс жилья</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FEATURES -->
+<section id="features">
+  <p class="section-eyebrow" fade-up>Инфраструктура</p>
+  <h2 class="section-title fade-up fade-up-delay-1">Всё, что должно<br>быть по умолчанию</h2>
+  <div class="features-grid">
+    <div class="feature-item fade-up fade-up-delay-1">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Подземный паркинг</div>
+      <p class="feature-desc">Наземный и подземный паркинг. Ваша машина не мёрзнет зимой и не греется летом.</p>
+    </div>
+    <div class="feature-item fade-up fade-up-delay-2">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Закрытый двор</div>
+      <p class="feature-desc">Благоустроенная территория без посторонних. Детская площадка, зелёные зоны, пешеходные дорожки.</p>
+    </div>
+    <div class="feature-item fade-up fade-up-delay-3">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Два лифта</div>
+      <p class="feature-desc">Пассажирский и грузовой. Диван и стройматериалы заедут без квеста через лестницу.</p>
+    </div>
+    <div class="feature-item fade-up fade-up-delay-4">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Ботанический сад рядом</div>
+      <p class="feature-desc">КазНУ, Ботанический сад, тихий Бостандык — всё в пешей доступности.</p>
+    </div>
+    <div class="feature-item fade-up fade-up-delay-5">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Ипотека и рассрочка</div>
+      <p class="feature-desc">Первоначальный взнос от 30%. Доступна ипотека и 100% оплата. Уточните условия у менеджера.</p>
+    </div>
+    <div class="feature-item fade-up fade-up-delay-1">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Центральное отопление</div>
+      <p class="feature-desc">Никаких газовых котлов и лишней ответственности. Тепло — по расписанию города.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- APARTMENTS -->
+<section id="apartments">
+  <p class="section-eyebrow">Планировки</p>
+  <h2 class="section-title">Выберите свой<br><em>формат</em></h2>
+ 
+  <div class="apt-tabs">
+    <button class="apt-tab active" onclick="switchTab(this, 'apt-1')">1-комнатные</button>
+    <button class="apt-tab" onclick="switchTab(this, 'apt-2')">2-комнатные</button>
+    <button class="apt-tab" onclick="switchTab(this, 'apt-3')">3-комнатные</button>
+    <button class="apt-tab" onclick="switchTab(this, 'apt-4')">4-комнатные</button>
+  </div>
+ 
+  <div id="apt-1" class="apt-panel active">
+    <div class="apt-plan">
+       <img src="plan1.jpg" alt="Планировка 1-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    </div>
+    <div class="apt-info">
+      <div class="apt-area">51,98 <span>м²</span></div>
+      <p style="color:#999; font-size:14px; margin-top:8px;">1-комнатная квартира</p>
+      <div class="apt-details">
+        <div class="apt-detail-row"><span>Гостиная</span><span>21,20 м²</span></div>
+        <div class="apt-detail-row"><span>Кухня</span><span>19,02 м²</span></div>
+        <div class="apt-detail-row"><span>Прихожая</span><span>7,22 м²</span></div>
+        <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+        <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+        <div class="apt-detail-row"><span>Стоимость</span><span>от 50,1 млн ₸</span></div>
+      </div>
+      <div class="apt-cta">
+        <a href="#contact" class="btn-primary">Узнать точную цену</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2ух комнатные планировки -->
+ 
+  <div id="apt-2" class="apt-panel">
+  <div class="apt-plan">
+    <img id="plan2-img" src="plan2a.png" alt="Планировка 2-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan2-img', ['plan2a.png','plan2b.png'], -1)">←</button>
+      <span id="plan2-counter">1 / 2</span>
+      <button onclick="switchPlan('plan2-img', ['plan2a.png','plan2b.png'], 1)">→</button>
+    </div>
+  </div>
+  <div class="apt-info">
+    <div class="apt-area">78–89 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">2-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
+      <div class="apt-detail-row"><span>Площадь</span><span>78,38 — 89,77 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
+ 
+
+<!-- 3ех комнатные планировки -->
+
+
+  <div id="apt-3" class="apt-panel">
+  <div class="apt-plan">
+    <img id="plan3-img" src="plan3a.png" alt="Планировка 3-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan3-img', ['plan3a.png','plan3b.png'], -1)">←</button>
+      <span id="plan3-counter">1 / 2</span>
+      <button onclick="switchPlan('plan3-img', ['plan3a.png','plan3b.png'], 1)">→</button>
+    </div>
+  </div>
+  <div class="apt-info">
+    <div class="apt-area">119–120 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">3-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Вариантов</span><span>2 планировки</span></div>
+      <div class="apt-detail-row"><span>Площадь</span><span>119,53 — 119,81 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>по запросу</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- 4х комнатные планировки -->
+ 
+  <div id="apt-4" class="apt-panel">
+  <div class="apt-plan">
+    <img id="plan4-img" src="plan4a.png" alt="Планировка 4-комнатной квартиры" style="width:100%; height:100%; object-fit:contain;" />
+    <div class="plan-nav">
+      <button onclick="switchPlan('plan4-img', ['plan4a.png','plan4b.png'], -1)">←</button>
+      <span id="plan4-counter">1 / 2</span>
+      <button onclick="switchPlan('plan4-img', ['plan4a.png','plan4b.png'], 1)">→</button>
+    </div>
+  </div>
+  <div class="apt-info">
+    <div class="apt-area">114–117 <span>м²</span></div>
+    <p style="color:#999; font-size:14px; margin-top:8px;">4-комнатная квартира</p>
+    <div class="apt-details">
+      <div class="apt-detail-row"><span>Площадь</span><span>114,04 — 117,33 м²</span></div>
+      <div class="apt-detail-row"><span>Отделка</span><span>Черновая</span></div>
+      <div class="apt-detail-row"><span>Потолки</span><span>3,0 м</span></div>
+      <div class="apt-detail-row"><span>Стоимость</span><span>от 190 млн ₸</span></div>
+    </div>
+    <div class="apt-cta">
+      <a href="#contact" class="btn-primary">Узнать точную цену</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- LIFESTYLE SECTIONS -->
+<section class="lifestyle-section">
+  <div class="lifestyle-img">
+    <img src="dvor2.png" alt="Двор" />
+  </div>
+  <div class="lifestyle-text">
+    <p class="section-eyebrow">Территория</p>
+    <h2 class="section-title">Двор, в котором<br><em>хочется жить</em></h2>
+    <p>Закрытая территория с ландшафтным озеленением, детской площадкой и пешеходными дорожками. Без машин, без чужих, без шума.</p>
+  </div>
+</section>
+
+<section class="lifestyle-section lifestyle-reverse">
+  <div class="lifestyle-img">
+    <img src="territorya.png" alt="Территория сверху" />
+  </div>
+  <div class="lifestyle-text">
+    <p class="section-eyebrow">Масштаб</p>
+    <h2 class="section-title">88 квартир —<br><em>не муравейник</em></h2>
+    <p>Камерный дом бизнес-класса. Не 500 квартир где вы не знаете соседей. Не 20 где все друг другу в окна смотрят. 88 — золотая середина.</p>
+  </div>
+</section>
+
+<section class="lifestyle-section">
+  <div class="lifestyle-img" style="background: var(--graphite-2); display:flex; align-items:center; justify-content:center; min-height:480px;">
+    <div style="text-align:center; color:var(--muted);">
+      <div style="font-family:var(--display); font-size:96px; font-weight:300; color:var(--gold); line-height:1;">3 м</div>
+      <div style="font-size:13px; letter-spacing:0.15em; text-transform:uppercase; margin-top:8px;">высота потолков</div>
+    </div>
+  </div>
+  <div class="lifestyle-text">
+    <p class="section-eyebrow">Пространство</p>
+    <h2 class="section-title">Потолки 3 метра —<br><em>чувствуется сразу</em></h2>
+    <p>Стандарт бизнес-класса которого нет в большинстве новостроек Алматы. Черновая отделка — вы не переплачиваете за чужой вкус в плитке и обоях.</p>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<div id="gallery">
+  <div class="gallery-item">
+    <img src="fasad.png" alt="Фасад ЖК Kosmonavtova" />
+    <div class="gallery-label">Фасад</div>
+  </div>
+  <div class="gallery-item">
+    <img src="dvor.png" alt="Двор" />
+    <div class="gallery-label">Двор</div>
+  </div>
+  <div class="gallery-item">
+    <img src="territorya2.png" alt="Территория" />
+    <div class="gallery-label">Территория</div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <p class="section-eyebrow fade-up" style="text-align:center;">До сдачи объекта</p>
+  <h2 class="section-title fade-up fade-up-delay-1" style="text-align:center; color:var(--white);">Осталось совсем <em style="color:var(--gold);">немного</em></h2>
+  <div class="countdown-grid fade-up fade-up-delay-2">
+    <div class="countdown-item">
+      <div class="countdown-num" id="cd-days">00</div>
+      <div class="countdown-label">дней</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-num" id="cd-hours">00</div>
+      <div class="countdown-label">часов</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-num" id="cd-minutes">00</div>
+      <div class="countdown-label">минут</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-num" id="cd-seconds">00</div>
+      <div class="countdown-label">секунд</div>
+    </div>
+  </div>
+  <p style="text-align:center; color:var(--muted); font-size:13px; letter-spacing:0.1em; text-transform:uppercase; margin-top:40px;">Сдача — IV квартал 2025 · ул. Пирогова, 15</p>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div>
+    <p class="section-eyebrow">Расположение</p>
+    <h2 class="section-title" style="color:var(--white)">Бостандык —<br><em style="color:var(--gold)">лучший</em> район</h2>
+    <ul class="location-list">
+      <li><span>Адрес</span><span>ул. Пирогова, 15</span></li>
+      <li><span>Район</span><span>Бостандыкский</span></li>
+      <li><span>Ботанический сад</span><span>15-20 минут</span></li>
+      <li><span>КазНУ им. аль-Фараби</span><span>15 минут</span></li>
+      <li><span>Школы и детсады</span><span>5-15 минут</span></li>
+      <li><span>До центра Алматы</span><span>10–15 мин</span></li>
+    </ul>
+  </div>
+  <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d76.9285!3d43.2220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e8a0b0b0b0b%3A0x0!2z0YPQuy4g0J_QuNGA0L7Qs9C-0LLQsCwgMTUsINChLdCR0L7RgdGC0LDQvdC00YvQutGB0LrQuNC5INGA0LDQudC-0L0s0JDQu9C80LDRgtGLIDQ1MDAwMA!5e0!3m2!1sru!2skz!4v1234567890"
+  width="100%" height="360"
+  style="border:0; filter: grayscale(100%) invert(90%) contrast(90%);"
+  allowfullscreen="" loading="lazy">
+</iframe>
+</section>
+
+
+<!-- GALLERY SECTION -->
+<section id="gallery-section">
+  <p class="section-eyebrow" style="text-align:center;">Галерея</p>
+  <h2 class="section-title" style="text-align:center;">Смотрите <em>сами</em></h2>
+  <div class="gallery-full-grid">
+    <div class="gal-item" onclick="openLightbox('territorya.png', event)"><img src="territorya.png" alt="Фото 1" /><div class="gallery-label">Фасад</div></div>
+    <div class="gal-item" onclick="openLightbox('dvor.png', event)"><img src="dvor.png" alt="Фото 2" /><div class="gallery-label">Двор</div></div>
+    <div class="gal-item" onclick="openLightbox('detskaya.png', event)"><img src="detskaya.png" alt="Фото 3" /><div class="gallery-label">Детская площадка</div></div>
+    <div class="gal-item" onclick="openLightbox('tren.png', event)"><img src="tren.png" alt="Фото 4" /><div class="gallery-label">Тренажерные установки</div></div>
+    <div class="gal-item" onclick="openLightbox('otdyh.png', event)"><img src="otdyh.png" alt="Фото 5" /><div class="gallery-label">Место для отдыха</div></div>
+    <div class="gal-item" onclick="openLightbox('parking.png', event)"><img src="parking.png" alt="Фото 6" /><div class="gallery-label">Паркинг</div></div>
+    <div class="gal-item" onclick="openLightbox('lobby.png', event)"><img src="lobby.png" alt="Фото 7" /><div class="gallery-label">Лобби</div></div>
+    <div class="gal-item" onclick="openLightbox('vid.png', event)"><img src="vid.png" alt="Фото 8" /><div class="gallery-label">Вид с окна</div></div>
+    <div class="gal-item" onclick="openLightbox('coffee.png', event)"><img src="coffee.png" alt="Фото 9" /><div class="gallery-label">Ночной вид</div></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1, event)">←</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+  <button class="lightbox-next" onclick="lightboxNav(1, event)">→</button>
+  <div class="lightbox-counter" id="lightbox-counter">1 / 9</div>
+</div>
+
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info fade-up">
+    <p class="section-eyebrow">Контакты</p>
+    <h2 class="section-title">Готовы<br>ответить</h2>
+    <p>Оставьте заявку — менеджер свяжется в течение 30 минут и ответит на все вопросы по планировкам, ценам и условиям покупки.</p>
+    <div class="contact-detail">
+      <a href="tel:+77770088121">+7 (777) 008 8121</a>
+      <a href="mailto:info@potok8.kz">info@potok8.kz</a>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <input class="form-input" type="text" placeholder="Ваше имя" required />
+      <input class="form-input" type="tel" placeholder="+7 (___) ___-__-__" required />
+      <select class="form-select">
+        <option value="">Интересует квартира</option>
+        <option>1-комнатная</option>
+        <option>2-комнатная</option>
+        <option>3-комнатная</option>
+        <option>4-комнатная</option>
+      </select>
+      <select class="form-select">
+        <option value="">Способ покупки</option>
+        <option>100% оплата</option>
+        <option>Ипотека</option>
+        <option>Рассрочка</option>
+      </select>
+      <button type="submit" class="btn-primary" style="border:none; cursor:pointer; text-align:center;">Отправить заявку</button>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <a href="progress.html" style="color:var(--gold); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none;">Ход строительства →</a>
+  <div class="footer-logo">Kosmonavtova</div>
+  <div class="footer-meta">© 2026 ЖК Kosmonavtova · Застройщик: Поток-8 · Alem Sauda Ltd · Алматы, ул. Пирогова, 15</div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
