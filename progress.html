@@ -533,12 +533,28 @@
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = 'Заявка отправлена';
-    btn.style.background = '#4a7c59';
-    btn.disabled = true;
-  }
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+
+  const name = form.querySelector('input[type=text]').value;
+  const phone = form.querySelector('input[type=tel]').value;
+  const apt = form.querySelector('select').value || 'не указано';
+
+  const TOKEN = '8655237689:AAFh4k_XrM-bLyGAJv8n0Atvj_8Uh4ZOspw';
+  const CHAT_ID = '1491556657';
+  const text = `Заявка со страницы "Ход строительства"\n\nИмя: ${name}\nТелефон: ${phone}\nКвартира: ${apt}`;
+
+  fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: CHAT_ID, text })
+  });
+
+  btn.textContent = 'Заявка отправлена';
+  btn.style.background = '#4a7c59';
+  btn.disabled = true;
+}
 
   function toggleMenu() {
     const menu = document.querySelector('.nav-links');
