@@ -340,7 +340,7 @@
     }
  
     .apt-panel { display: none; }
-    .apt-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .apt-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; overflow: hidden; }
  
     .apt-plan {
       background: var(--white);
@@ -604,6 +604,7 @@
   position: fixed;
   right: 0;
   top: 50%;
+  left: auto;
   transform: translateY(-50%);
   background: var(--gold);
   color: var(--graphite-2);
@@ -690,4 +691,53 @@
   font-size: 13px;
   color: #999;
   letter-spacing: 0.05em;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26,28,32,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 20px; }
+  .nav-cta { display: none; }
 }
