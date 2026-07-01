@@ -5,13 +5,30 @@ function switchTab(btn, panelId) {
     document.getElementById(panelId).classList.add('active');
   }
  
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = 'Заявка отправлена';
-    btn.style.background = '#4a7c59';
-    btn.disabled = true;
-  }
+ function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  
+  const name = form.querySelector('input[type=text]').value;
+  const phone = form.querySelector('input[type=tel]').value;
+  const apt = form.querySelectorAll('select')[0].value || 'не указано';
+  const payment = form.querySelectorAll('select')[1].value || 'не указано';
+
+  const TOKEN = '8655237689:AAFh4k_XrM-bLyGAJv8n0Atvj_8Uh4ZOspw';
+  const CHAT_ID = '1491556657';
+  const text = ` Новая заявка — ЖК Kosmonavtova\n\nИмя: ${name}\nТелефон: ${phone}\nКвартира: ${apt}\nОплата: ${payment}`;
+
+  fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: CHAT_ID, text })
+  });
+
+  btn.textContent = 'Заявка отправлена';
+  btn.style.background = '#4a7c59';
+  btn.disabled = true;
+}
  
   //опасити на скролле
   const nav = document.querySelector('nav');
@@ -32,7 +49,25 @@ function switchTab(btn, panelId) {
 
 function handleCallback(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+
+  const name = form.querySelector('input[type=text]').value;
+  const phone = form.querySelector('input[type=tel]').value;
+
+  const TOKEN = '8655237689:AAFh4k_XrM-bLyGAJv8n0Atvj_8Uh4ZOspw';
+  const CHAT_ID = '1491556657';
+  const text = `Обратный звонок — ЖК Kosmonavtova\n\nИмя: ${name}\nТелефон: ${phone}`;
+
+  fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: CHAT_ID, text })
+  })
+  .then(r => r.json())
+  .then(d => console.log(d))
+  .catch(err => console.log(err));
+
   btn.textContent = 'Заявка отправлена';
   btn.style.background = '#4a7c59';
   btn.disabled = true;
