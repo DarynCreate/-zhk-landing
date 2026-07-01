@@ -631,7 +631,7 @@
 
 .callback-panel {
   position: fixed;
-  right: -360px;
+  right: -400px;
   top: 50%;
   transform: translateY(-50%);
   width: 320px;
@@ -730,6 +730,7 @@
     display: none;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
+    width: 100ww;
     background: rgba(26,28,32,0.98);
     flex-direction: column;
     justify-content: center;
